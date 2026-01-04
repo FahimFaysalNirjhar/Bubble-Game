@@ -1,6 +1,7 @@
 const palateBottom = document.querySelector(".palate-bottom");
 const timerValue = document.getElementById("timer");
 const scoreValue = document.getElementById("score");
+const hit = document.getElementById("hit");
 
 let hitNum = 0;
 let score = 0;
@@ -23,21 +24,39 @@ const timer = () => {
       time--;
       timerValue.textContent = time;
     } else {
-      closeInterval(timeInterval);
+      clearInterval(timeInterval);
+      palateBottom.innerHTML = `<h1>Game Over. Your Score is ${score}</h1>`;
     }
   }, 1000);
 };
+const updateHit = () => {
+  hitNum = Math.floor(Math.random() * 10);
+  hit.textContent = hitNum;
+};
 
+updateHit();
 timer();
 
 const updateScore = () => {
   score += 10;
   scoreValue.textContent = score;
 };
+
+const decreaseScore = () => {
+  if (score > 0) {
+    score -= 10;
+    scoreValue.textContent = score;
+  }
+};
+
 palateBottom.addEventListener("click", (event) => {
   console.log(event.target.textContent);
   let number = Number(event.target.textContent);
   if (hitNum === number) {
     updateScore();
+    updateHit();
+    createBubble();
+  } else {
+    decreaseScore();
   }
 });
