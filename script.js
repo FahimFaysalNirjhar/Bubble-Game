@@ -25,7 +25,7 @@ const timer = () => {
       timerValue.textContent = time;
     } else {
       clearInterval(timeInterval);
-      palateBottom.innerHTML = `<h1>Game Over. Your Score is ${score}</h1>`;
+      palateBottom.innerHTML = `<h1>Game Over</h1>`;
     }
   }, 1000);
 };
