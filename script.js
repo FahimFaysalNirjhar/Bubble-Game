@@ -1,4 +1,5 @@
 const palateBottom = document.querySelector(".palate-bottom");
+const timerValue = document.getElementById("timer");
 let hitNum = 0;
 const createBubble = () => {
   let container = "";
@@ -9,3 +10,16 @@ const createBubble = () => {
   palateBottom.innerHTML = container;
 };
 createBubble();
+
+let time = 60;
+const timer = () => {
+  const timeInterval = setInterval(() => {
+    if (time > 0) {
+      time--;
+      timerValue.textContent = time;
+    } else {
+      closeInterval(timeInterval);
+    }
+  }, 1000);
+};
+timer();
