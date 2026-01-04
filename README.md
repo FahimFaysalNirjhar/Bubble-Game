@@ -21,6 +21,7 @@ Players click on bubbles that match a **target number** before the timer runs ou
 ## 📁 Project Structure
 
 bubble-game/
+│
 ├─ index.html # Main HTML structure
 ├─ style.css # Game styling
 └─ script.js # Game logic, timer, and click handling
