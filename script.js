@@ -3,6 +3,15 @@ const timerValue = document.getElementById("timer");
 const scoreValue = document.getElementById("score");
 const hit = document.getElementById("hit");
 
+palateBottom.style.width = "100%";
+palateBottom.style.height = "calc(100% - 100px)";
+palateBottom.style.padding = "10px";
+palateBottom.style.display = "flex";
+palateBottom.style.flexWrap = "wrap";
+palateBottom.style.justifyContent = "center";
+palateBottom.style.alignItems = "center";
+palateBottom.style.gap = "5px";
+
 let hitNum = 0;
 let score = 0;
 
